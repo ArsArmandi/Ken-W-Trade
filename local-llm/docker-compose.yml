@@ -1,0 +1,19 @@
+services:
+  llama:
+    build: .
+    ports:
+      - "8080:8080"
+    volumes:
+      - ~/.cache/llama:/models:z
+    devices:
+      - /dev/kfd:/dev/kfd
+      - /dev/dri:/dev/dri
+    group_add:
+      - video
+      - render
+    environment:
+      - HSA_OVERRIDE_GFX_VERSION=10.3.0
+      - ROCR_VISIBLE_DEVICES=0
+    security_opt:
+      - label=disable
+    command: ["--host", "0.0.0.0", "--port", "8080", "-m", "/models/glm-4.7-flash-claude-4.5-opus.q3_k_m.gguf", "--ctx-size", "128000", "--flash-attn"]
