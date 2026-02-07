@@ -1,0 +1,11 @@
+agent:
+  gsd-planner: opencode/glm-4.7-free
+  gsd-plan-checker: opencode/glm-4.7-free
+  gsd-phase-researcher: opencode/glm-4.7-free
+  gsd-roadmapper: opencode/glm-4.7-free
+  gsd-research-synthesizer: opencode/glm-4.7-free
+  gsd-codebase-mapper: opencode/glm-4.7-free
+  gsd-executor: opencode/minimax-m2.1-free
+  gsd-debugger: opencode/minimax-m2.1-free
+  gsd-verifier: opencode/glm-4.7-free
+  gsd-integration-checker: opencode/glm-4.7-free
