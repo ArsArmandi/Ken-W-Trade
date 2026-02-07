@@ -6,6 +6,8 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     curl \
     bash \
     procps \
+    nodejs \
+    npm \
     && rm -rf /var/lib/apt/lists/*
 
 
@@ -47,6 +49,15 @@ RUN mkdir -p /home/vscode/.config/opencode && cat > /home/vscode/.config/opencod
         },
         "GLM-4.7-Flash-Uncen-Hrt-NEO-CODE-MAX-imat-D_AU-IQ3_M": {
           "name": "GLM-4.7-Flash-Uncen-Hrt-NEO-CODE-MAX-imat-D_AU-IQ3_M.gguf"
+        },
+        "Mistral-Nemo-2407-12B-Thinking-Claude-Gemini-GPT5.2-Uncensored-HERETIC.Q8_0": {
+          "name": "Mistral-Nemo-2407-12B-Thinking-Claude-Gemini-GPT5.2-Uncensored-HERETIC.Q8_0.gguf"
+        },
+        "Qwen3-14B-Claude-4.5-Opus-Distill.q4_k_m": {
+          "name": "Qwen3-14B-Claude-4.5-Opus-Distill.q4_k_m.gguf"
+        },
+        "ruvltra-claude-code-0.5b-q4_k_m": {
+          "name": "ruvltra-claude-code-0.5b-q4_k_m.gguf"
         }
       }
     }
@@ -65,6 +76,8 @@ USER vscode
 RUN curl -fsSL https://opencode.ai/install | bash
 
 ENV PATH="/home/vscode/.opencode/bin:${PATH}"
+
+RUN npx -y gsd-opencode@latest
 
 # Copy and install Python project dependencies if present
 WORKDIR /workspace

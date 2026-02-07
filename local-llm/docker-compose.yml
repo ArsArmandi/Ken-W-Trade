@@ -16,4 +16,4 @@ services:
       - ROCR_VISIBLE_DEVICES=0
     security_opt:
       - label=disable
-    command: ["--host", "0.0.0.0", "--port", "8080", "-m", "/models/glm-4.7-flash-claude-4.5-opus.q3_k_m.gguf", "--ctx-size", "128000", "--flash-attn"]
+    command: ["--host", "0.0.0.0", "--port", "8080", "-m", "/models/GLM-4.7-Flash-Uncen-Hrt-NEO-CODE-MAX-imat-D_AU-IQ3_M.gguf", "--ctx-size", "128000", "--flash-attn", "on"]
