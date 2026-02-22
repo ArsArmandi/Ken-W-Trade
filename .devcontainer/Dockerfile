@@ -58,6 +58,9 @@ RUN mkdir -p /home/vscode/.config/opencode && cat > /home/vscode/.config/opencod
         },
         "ruvltra-claude-code-0.5b-q4_k_m": {
           "name": "ruvltra-claude-code-0.5b-q4_k_m.gguf"
+        },
+        "DeepSeek-Coder-V2-Lite-Instruct-Q4_K_M": {
+          "name": "DeepSeek-Coder-V2-Lite-Instruct-Q4_K_M.gguf"
         }
       }
     }
@@ -77,7 +80,7 @@ RUN curl -fsSL https://opencode.ai/install | bash
 
 ENV PATH="/home/vscode/.opencode/bin:${PATH}"
 
-RUN npx -y gsd-opencode@latest
+RUN npx -y gsd-opencode@latest --global
 
 # Copy and install Python project dependencies if present
 WORKDIR /workspace
